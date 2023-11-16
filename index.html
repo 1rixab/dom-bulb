@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bulb</title>
+    <style>
+        body{
+            background-color: grey;
+        }
+        #bolb{
+            width:50vh;
+            height:50vh;
+            border:0.5vh solid black;
+            display:flex;
+            margin:17vh 0 0 25vh;
+            border-radius: 40vh;
+            
+        }
+        .btn{
+            width: 22vh;
+            height:7vh;
+            font-size: 5vh;
+            padding: 10px;
+            border-radius: 2vh;
+            border:none;
+            background-color: lightgreen;
+
+        }
+        #btn2{
+            background-color: red;
+        }
+        #btn3{
+            background-color: orange;
+        }
+    </style>
+</head>
+<body>
+    <div id="bolb">
+
+    </div>
+    <button class="btn" id="btn1">
+          ON
+    </button>
+    <button class="btn" id="btn2">
+        OFF
+  </button>
+  <br>
+  <br>
+  <button class="btn" id="btn3">
+    ON/OFF
+</button>
+    <script>
+        let a = document.querySelector("#btn1");
+        let c = document.querySelector("#btn2");
+        let d = document.querySelector("#btn3");
+        let b = document.querySelector("#bolb");
+        let clip = 0;
+        a.addEventListener("click",function(){
+            b.style.backgroundColor = "yellow"
+            a.style.display = "none"
+            c.style.display = "block"
+        })
+        c.addEventListener("click",function(){
+            b.style.backgroundColor = "grey"
+            c.style.display = "none"
+            a.style.display = "block"
+        })
+        d.addEventListener("click",function(){
+           if(clip == 0){
+            b.style.backgroundColor = "yellow"
+            clip = 1;
+        }
+        else{
+            b.style.backgroundColor = "grey"
+            clip = 0;
+        }
+        })
+
+    </script>
+</body>
+</html>
